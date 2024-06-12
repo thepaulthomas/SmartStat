@@ -6,6 +6,7 @@ import json
 # Get file name.
 file_name = sys.argv[1]
 print(f'Describing config from "{file_name}"')
+print()
 
 # Load JSON.
 with open(file_name,'r') as fp:
@@ -14,6 +15,7 @@ with open(file_name,'r') as fp:
 # Describe config name.
 config_name = config['name']
 print(f"Config name: {config_name}")
+print()
 
 # Loop through days of the week.
 for day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']:
@@ -32,7 +34,7 @@ for day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunda
 
     # Loop through times and describe.
     for time in times:
-      temp = day[time]
+      temp = schedule[time]
       print(f'The heating will be set to {temp}C at {time}')
 
     # Add blank line for readability.
